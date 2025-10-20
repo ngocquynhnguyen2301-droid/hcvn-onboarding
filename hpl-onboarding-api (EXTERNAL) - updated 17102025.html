@@ -1,0 +1,1066 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Lion workflow services</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #ededed;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#18bc9c;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#eff7fc;border-left:4px solid #3498db}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#3498db}.warning{color:black;background-color:#fcf0ef;border-left:4px solid #d62c1a}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#d62c1a}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #ededed;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#ededed;border-radius:10px;margin:-2px 0}.badge.get{color:white;background-color:#3498db}.badge.head{color:white;background-color:#3498db}.badge.options{color:white;background-color:#3498db}.badge.put{color:white;background-color:#f39c12}.badge.patch{color:white;background-color:#f39c12}.badge.post{color:white;background-color:#18bc9c}.badge.delete{color:white;background-color:#e74c3c}.collapse-button{float:right}.collapse-button .close{display:none;color:#18bc9c;cursor:pointer}.collapse-button .open{color:#18bc9c;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#18bc9c}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e80b8}.definition .method.head{color:#2e80b8}.definition .method.options{color:#2e80b8}.definition .method.post{color:#2eb89d}.definition .method.put{color:#b8822e}.definition .method.patch{color:#b8822e}.definition .method.delete{color:#b83b2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#ededed;text-decoration:none !important;border-top:1px solid #ededed;border-left:1px solid #ededed;border-right:1px solid #ededed;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #ededed;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#ededed;border-bottom:1px solid #ededed;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #ededed}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#000;background-color:white}.action h4.action-heading .method.head{color:#000;background-color:white}.action h4.action-heading .method.options{color:#000;background-color:white}.action h4.action-heading .method.put{color:#000;background-color:white}.action h4.action-heading .method.patch{color:#000;background-color:white}.action h4.action-heading .method.post{color:#000;background-color:white}.action h4.action-heading .method.delete{color:#000;background-color:white}.action h4.action-heading code{color:#444;background-color:rgba(255,255,255,0.7);border-color:transparent;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#3498db}.action.get h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.head{border-color:#3498db}.action.head h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.options{border-color:#3498db}.action.options h4.action-heading{color:white;background:#3498db;border-bottom-color:#3498db}.action.post{border-color:#18bc9c}.action.post h4.action-heading{color:white;background:#18bc9c;border-bottom-color:#18bc9c}.action.put{border-color:#f39c12}.action.put h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.patch{border-color:#f39c12}.action.patch h4.action-heading{color:white;background:#f39c12;border-bottom-color:#f39c12}.action.delete{border-color:#e74c3c}.action.delete h4.action-heading{color:white;background:#e74c3c;border-bottom-color:#e74c3c}</style></head><body class="preload"><div id="nav-background"></div><div class="container-fluid triple"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#security">Security</a></div><div class="collapse-content"><ul><li><a href="#header-securing-apis-partner-via-oauth2">Securing APIs partner via OAuth2</a></li><li><a href="#security-login-partner-post"><span class="badge post"><i class="fa fa-plus"></i></span>Authenticate Partner</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#hpl-onboarding">HPL Onboarding</a></div><div class="collapse-content"><ul><li><a href="#hpl-onboarding-generate-bnpl-redirect-url-post"><span class="badge post"><i class="fa fa-plus"></i></span>Generate BNPL Redirect URL</a></li><li><a href="#hpl-onboarding-get-onboarding-status-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Get Onboarding Status</a></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="https://api-dev.homecredit.vn">https://api-dev.homecredit.vn</a></p></nav><div class="content"><div id="right-panel-background"></div><div class="middle"><header><h1 id="top">Lion workflow services</h1></header></div><div class="right"><h5>API Endpoint</h5><a href="https://api-dev.homecredit.vn">https://api-dev.homecredit.vn</a></div><div class="middle"><p>This is documentation of Lion workflow services</p>
+<p><strong>Base prefix: /lion-workflow/v2/workflow</strong>.</p>
+</div><div class="middle"><section id="security" class="resource-group"><h2 class="group-heading">Security <a href="#security" class="permalink">&para;</a></h2><h2 id="header-securing-apis-partner-via-oauth2">Securing APIs partner via OAuth2 <a class="permalink" href="#header-securing-apis-partner-via-oauth2" aria-hidden="true">¶</a></h2>
+<p>To access user sensitive data through API, you have to obtain <em>access token</em> first; this token is a string of arbitrary
+length (30+ chars) and it has to be included in HTTP header to every request to API. Open API
+uses <a href="https://tools.ietf.org/html/rfc6749">OAuth2</a> mechanism to grant permissions to access user data. As for now,
+only <a href="https://tools.ietf.org/html/rfc6749##page-24">authorization code grant</a> flow is supported. This section describes
+mechanism and resources to get valid access token and use it to access protected resources.</p>
+<ul>
+<li>
+<p>Partner has to login to obtain access token, use <a href="#security-login-partner-post"><code>/authentication/v2/partner</code></a></p>
+</li>
+<li>
+<p>Access token should be present in every request using request header <code>Authorization</code>, with type <code>Bearer</code>. If your
+access token has value <code>secret_token</code>, it should be specified as follows:</p>
+</li>
+</ul>
+<pre><code><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">"Bearer {access_token}"</span></code></pre>
+<ul>
+<li>So the real example using curl will look like:</li>
+</ul>
+<pre><code>curl -H <span class="hljs-string">"Authorization: Bearer {access_token}"</span>  <span class="hljs-string">https:</span><span class="hljs-comment">//api-dev.homecredit.vn/lion</span></code></pre>
+<ul>
+<li>
+<p>Access token has limited time validity (for 2 hours by default). After it is expired, you have to obtain new one by login again</p>
+</li>
+<li>
+<p>If you fail to specify OAuth2 token, you will receive <code>401 Unauthorized</code> error and following response body:</p>
+</li>
+</ul>
+<pre><code>{
+   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"The access token is missing"</span></span>,
+   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"invalid_request"</span>
+</span>}</code></pre>
+<ul>
+<li>If you provide invalid OAuth2 token, you will receive <code>403 Forbidden</code> error and following response body:</li>
+</ul>
+<pre><code>{
+    "<span class="hljs-attribute">error_description</span>":<span class="hljs-value"><span class="hljs-string">"The access token is invalid or has expired"</span></span>,
+    "<span class="hljs-attribute">error</span>":<span class="hljs-value"><span class="hljs-string">"invalid_token"</span>
+</span>}</code></pre>
+<blockquote>
+<p>IMPORTANT NOTE: You must keep your access token and login credentials safe. NEVER put login credentials nor access token into client page. If you plan to integrate API calls in client flow without submitting the page to server, you should implement REST endpoint bound to your shopping basket session, that will be used as a proxy to call HC API.  <br>
+NEVER transfer access token nor login credentials over plain HTTP. Such requests will be refused</p>
+</blockquote>
+</section></div><div class="middle"><div id="security-login-partner" class="resource"><h3 class="resource-heading">Login Partner <a href="#security-login-partner" class="permalink">&para;</a></h3><p>Resource for partners login.</p>
+</div></div><div class="right"><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api-dev.homecredit.vn</span>/authentication/v2/partner</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Partner Login</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">credentials</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">userName</span>": <span class="hljs-value"><span class="hljs-string">"HPL"</span></span>,
+    "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"y9KeeN%S"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">clientId</span>": <span class="hljs-value"><span class="hljs-string">"h2bnCkkPof2H5AlVDOQxt59annpcDamK"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">credentials</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">userName</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">password</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"userName"</span>,
+        <span class="hljs-string">"password"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">clientId</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"partner application identifier (`client_id`), if provided to you"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"credentials"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><div class="description"><p>Login succeeded</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">accessToken</span>": <span class="hljs-value"><span class="hljs-string">"2131544asd123zxf48sd6f1x5c4"</span></span>,
+  "<span class="hljs-attribute">expiresIn</span>": <span class="hljs-value"><span class="hljs-number">172800</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">accessToken</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"API access token"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">expiresIn</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"token validity, in seconds"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"accessToken"</span>,
+    <span class="hljs-string">"expiresIn"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="security-login-partner-post" class="action post"><h4 class="action-heading"><div class="name">Authenticate Partner</div><a href="#security-login-partner-post" class="method post">POST</a><code class="uri">/authentication/v2/partner</code></h4><p>Support partner login with provided parameters from HC likes: clientId, userName and Password. After succeeded, there is
+the code will use to obtain the access token.</br>
+</br><strong>NOTE:</strong> This is only a sample, please contact HCVN Product Team to get a proper credential.</p>
+</div></div><hr class="split"><div class="middle"><section id="hpl-onboarding" class="resource-group"><h2 class="group-heading">HPL Onboarding <a href="#hpl-onboarding" class="permalink">&para;</a></h2></section></div><div class="middle"><div id="hpl-onboarding-generate-bnpl-redirect-url" class="resource"><h3 class="resource-heading">Generate BNPL Redirect URL <a href="#hpl-onboarding-generate-bnpl-redirect-url" class="permalink">&para;</a></h3><p>Request for a redirect onboarding URL from Home Credit Vietnam</p>
+</div></div><div class="right"><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api-dev.homecredit.vn</span>/lion-workflow/v2/workflow</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Request RedirectURL</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">`Bearer 49ed27da-d230-437b-833c-ab69f88c4108` (string, required) - OAuth2 token which can be used to call APIs</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">workflowType</span>": <span class="hljs-value"><span class="hljs-string">"BNPL_ONBOARDING"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">sourceSystem</span>": <span class="hljs-value"><span class="hljs-string">"TRAVELOKA"</span></span>,
+    "<span class="hljs-attribute">customerData</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">partnerCustomerId</span>": <span class="hljs-value"><span class="hljs-string">"1002010000000026300"</span></span>,
+      "<span class="hljs-attribute">primaryPhoneNumber</span>": <span class="hljs-value"><span class="hljs-string">"0937425325"</span></span>,
+      "<span class="hljs-attribute">secondaryPhoneNumbers</span>": <span class="hljs-value">[
+        <span class="hljs-string">"0911111111"</span>,
+        <span class="hljs-string">"0922222222"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">successfulUrl</span>": <span class="hljs-value"><span class="hljs-string">"https://sunsetonlineshop.com/payment/success.html"</span></span>,
+    "<span class="hljs-attribute">failedUrl</span>": <span class="hljs-value"><span class="hljs-string">"https://sunsetonlineshop.come/payment/fail.html"</span></span>,
+    "<span class="hljs-attribute">extension</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">key</span>": <span class="hljs-value"><span class="hljs-string">"sellers.0.code"</span></span>,
+        "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"TEST_BNPL2"</span>
+      </span>}
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">workflowType</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">sourceSystem</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Defined source system"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">customerData</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">partnerCustomerId</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"customer ID from the partner side"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">primaryPhoneNumber</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"customer primary phone"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">secondaryPhoneNumbers</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"customer's secondary phones"</span>
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"customer related data"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">successfulUrl</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Successful URL"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">failedUrl</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Failed URL"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">extension</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">key</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">value</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Extension data"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"sourceSystem"</span>,
+        <span class="hljs-string">"customerData"</span>,
+        <span class="hljs-string">"successfulUrl"</span>,
+        <span class="hljs-string">"failedUrl"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Onboarding data"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"data"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">400</span></div><div class="tab"><div><div class="inner"><div class="description"><p>The redirect URL has been successfully created</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">workflowToken</span>": <span class="hljs-value"><span class="hljs-string">"ZI9-73uELc6B9_OX1oLf8A==zS5EzoEb6cwzoVoTtE5H8XK9JcqVl_7Q-OkAkv0aBpxVJmVRGc4Vegl_gqZ1ZBVF_nH7mSCI9kXztFOb25VjKF0="</span></span>,
+  "<span class="hljs-attribute">availableNextSteps</span>": <span class="hljs-value">[
+    <span class="hljs-string">"GET_ONBOARDING_STATUS"</span>
+  ]</span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">responseTime</span>": <span class="hljs-value"><span class="hljs-string">"2024-04-30T13:50:00+07:00"</span></span>,
+    "<span class="hljs-attribute">redirectUrl</span>": <span class="hljs-value"><span class="hljs-string">"https://homepaylater.vn/mp1/?s=2be43769-063b-401f-92b9-07c8ad4a2482&amp;partner=MW&amp;t=lfgo-9PiGckO4bcBvgJm0Q%3D%3DwB4edYF6piQiVAgJ3p_iS_D8N3-SB8xdUdMWzXTFuLwtRQb9tm_9-x_8BEfmScfc-ULqoP3zUsVRgDP-VsGMgJxFP2Hi9SOZ5R6p8FInyb0%3D"</span></span>,
+    "<span class="hljs-attribute">validTo</span>": <span class="hljs-value"><span class="hljs-string">"2024-04-30T13:50:00+07:00"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">workflowToken</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"workflowToken"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">availableNextSteps</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"availableNextSteps"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">responseTime</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Time when response is sent from HC. Format: YYYY-MM-DDThh:mm:ssTZD"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">redirectUrl</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Redirect URL to BNPL site for onboarding process"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">validTo</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"expiry time of the redirect URL"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"responseTime"</span>,
+        <span class="hljs-string">"redirectUrl"</span>,
+        <span class="hljs-string">"validTo"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"data"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"workflowToken"</span>,
+    <span class="hljs-string">"availableNextSteps"</span>,
+    <span class="hljs-string">"data"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><div class="description"><p>Error</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"ERR_1000_SOME_ERROR_CODE"</span></span>,
+      "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Some error/validation message description"</span></span>,
+      "<span class="hljs-attribute">severity</span>": <span class="hljs-value"><span class="hljs-string">"ERROR"</span></span>,
+      "<span class="hljs-attribute">attribute</span>": <span class="hljs-value"><span class="hljs-string">"personalBirthNumber"</span></span>,
+      "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value"><span class="hljs-string">"UAT1:AMS:20160516-091658.450:45e4"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">errors</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"unique internal error code"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"human readable error description (non-localized)"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">severity</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ERROR"</span>,
+              <span class="hljs-string">"WARN"</span>,
+              <span class="hljs-string">"INFO"</span>
+            ]
+          </span>}</span>,
+          "<span class="hljs-attribute">attribute</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"json path of request attribute that caused the error (if applicable)"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"internal ticket ID, used for error backtracking"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"code"</span>,
+          <span class="hljs-string">"message"</span>,
+          <span class="hljs-string">"severity"</span>
+        ]
+      </span>}
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"errors"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="hpl-onboarding-generate-bnpl-redirect-url-post" class="action post"><h4 class="action-heading"><div class="name">Generate BNPL Redirect URL</div><a href="#hpl-onboarding-generate-bnpl-redirect-url-post" class="method post">POST</a><code class="uri">/lion-workflow/v2/workflow</code></h4><p>The redirect URL from Home Credit Vietnam will have an hour of lifetime. If this link is accessed after being expired, an error message will let customers know that they need to quit the current session, and start a new one.<br/>
+<br/>Workflow token’s lifetime can be adjusted based on partner’s need.<br/>
+<br/><b>Request Description</b><br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>workflowType</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Declaring workflow type</td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>Object</td>
+    <td>Yes</td>
+    <td></td>
+  </tr>
+</table>
+<p><br/>Data Object Description<br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>sourceSystem</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Partner's system identifier defined by HCVN</td>
+  </tr>
+  <tr>
+    <td>customerData</td>
+    <td>Object</td>
+    <td>Yes</td>
+    <td>Customer data</td>
+  </tr>
+  <tr>
+    <td>successfulUrl</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>HPL's redirectURL if customer succeeds onboarding with HCVN</td>
+  </tr>
+  <tr>
+    <td>failedUrl</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>HPL's redirectURL if customer fails to onboard with HCVN</td>
+  </tr>
+  <tr>
+    <td>extension</td>
+    <td>List/Object</td>
+    <td>Yes</td>
+    <td>Additional data, defined by key names and their values</td>
+  </tr>
+</table>
+<p><br/>customerData Object Description<br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>partnerCustomerId</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer ID from partner side</td>
+  </tr>
+  <tr>
+    <td>primaryPhoneNumber</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer primary phone</td>
+  </tr>
+  <tr>
+    <td>secondaryPhoneNumbers</td>
+    <td>List</td>
+    <td>No</td>
+    <td>Customer secondary phones</td>
+  </tr>
+</table>
+<p><br/><b>Extension Data</b><br/>
+<br/>Extension data is completely optional, though they directly affect customers’ approval rates.<br/>
+<br/><b>NOTE:</b> partners who have HCVN sale agents or retail agents can put the agent’s code (HCVN’s HR code) into “other.agentCode” for bonus recognition.<br/></p>
+<ul>
+<li>
+<p>Customer Extension Data:<br/></p>
+<ul>
+<li>customerData.fullName: The customer’s full name (could be not a real name)<br/></li>
+<li>customerData.accountName: The account name that customer is used to login on merchant/partner platform<br/></li>
+<li>customerData.email: Customer’s email<br/></li>
+<li>customerData.addresses.0.type: Customer’s address type<br/></li>
+<li>customerData.addresses.0.streetNumber: Customer’s street number<br/></li>
+<li>customerData.addresses.0.streetName: Customer’s street name<br/></li>
+<li>customerData.addresses.0.fullStreet: Customer’s street house number and street name<br/></li>
+<li>customerData.addresses.0.wardCode: Customer’s ward code<br/></li>
+<li>customerData.addresses.0.wardName: Customer’s ward name<br/></li>
+<li>customerData.addresses.0.districtCode: Customer’s district code<br/></li>
+<li>customerData.addresses.0.districtName: Customer’s district name<br/></li>
+<li>customerData.addresses.0.provinceCode: Customer’s province code<br/></li>
+<li>customerData.addresses.0.provinceName: Customer’s ward name<br/></li>
+<li>customerData.addresses.0.fullAddress: Customer’s full address<br/></li>
+<li>customerData.addresses.0.isDefault: Check if this provided address is customer’s default address<br/></li>
+<li>customerData.addresses.0.receiverName: Shipping name<br/></li>
+<li>customerData.addresses.0.receiverPhoneNumber: Shipping contact<br/><br/></li>
+</ul>
+</li>
+<li>
+<p>Other Extension Data:<br/></p>
+<ul>
+<li>other.agentCode: Input HCVN’s sale agent code or retail agent code for bonus recognition <br/></li>
+<li>other.agentPosCode: Used for dynamic salerooms. Point-of-sale code of Sale agent/Retail agent <br/></li>
+<li>other.agentDevice.gps.longitude: longitude gps data of sale agent’s device <br/></li>
+<li>other.agentDevice.gps.latitude: latitude gps data of sale agent’s device<br/></li>
+<li>other.orderCreatedFrom: Order created online or offline, taking values such as ONLINE or OFFLINE</li>
+<li>other.callingSource: For partners that have multiple channels</li>
+</ul>
+</li>
+</ul>
+<p><br/>For the full list of extension keys’ description used in the onboarding process, please visit &quot;<a href="https://devportal.homecredit.vn/v1/apis/bnpl/blueprint/bnplservice/1">https://devportal.homecredit.vn/v1/apis/bnpl/blueprint/bnplservice/1</a>&quot; - check Customer Onboarding V2 -&gt; Extension <br/></p>
+<p><br/><b>Response Description</b><br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>workflowToken</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Token that is used to trigger next workflow steps</td>
+  </tr>
+  <tr>
+    <td>availableNextSteps</td>
+    <td>List</td>
+    <td>Yes</td>
+    <td>Available next steps within this workflow</td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>Object</td>
+    <td>Yes</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>data.responseTime</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Time when response is sent from HC. Format: YYYY-MM-DDThh:mm:ssTZD</td>
+  </tr>
+  <tr>
+    <td>data.redirectUrl</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Redirect URL to HCVN's BNPL site for the onboarding process</td>
+  </tr>
+  <tr>
+    <td>data.validTo</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Expired time of the redirect URL</td>
+  </tr>
+</table></div></div><hr class="split"><div class="middle"><div id="hpl-onboarding-get-onboarding-status" class="resource"><h3 class="resource-heading">Get Onboarding Status <a href="#hpl-onboarding-get-onboarding-status" class="permalink">&para;</a></h3><p>Request for a redirect onboarding URL from Home Credit Vietnam</p>
+</div></div><div class="right"><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api-dev.homecredit.vn</span>/lion-workflow/v2/workflow</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Check Onboarding Status</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">`Bearer 49ed27da-d230-437b-833c-ab69f88c4108` (string, required) - OAuth2 token which can be used to call APIs</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">workflowToken</span>": <span class="hljs-value"><span class="hljs-string">"ZI9-73uELc6B9_OX1oLf8A==zS5EzoEb6cwzoVoTtE5H8XK9JcqVl_7Q-OkAkv0aBpxVJmVRGc4Vegl_gqZ1ZBVF_nH7mSCI9kXztFOb25VjKF0="</span></span>,
+  "<span class="hljs-attribute">step</span>": <span class="hljs-value"><span class="hljs-string">"GET_ONBOARDING_STATUS"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">workflowToken</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"workflowToken"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">step</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Declare step to get customer's onboarding status"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"workflowToken"</span>,
+    <span class="hljs-string">"step"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">400</span></div><div class="tab"><div><div class="inner"><div class="description"><p>The redirect URL has been successfully created</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">responseTime</span>": <span class="hljs-value"><span class="hljs-string">"2024-04-30T13:50:00+07:00"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"NO_RESULT_FOUND"</span></span>,
+    "<span class="hljs-attribute">reason</span>": <span class="hljs-value"><span class="hljs-string">"fail by something"</span></span>,
+    "<span class="hljs-attribute">customerToken</span>": <span class="hljs-value"><span class="hljs-string">"047bd0dc-b1f4-4f21-bd8a-520d06668c2e"</span></span>,
+    "<span class="hljs-attribute">availableLimit</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-number">21000000</span></span>,
+        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"VND"</span>
+      </span>}
+    ]</span>,
+    "<span class="hljs-attribute">frameContractCode</span>": <span class="hljs-value"><span class="hljs-string">"1625111997"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">availableNextSteps</span>": <span class="hljs-value">[
+    <span class="hljs-string">"GET_ONBOARDING_STATUS"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">responseTime</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Time when response is sent from HC. Format: YYYY-MM-DDThh:mm:ssTZD"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"NO_RESULT_FOUND"</span>,
+            <span class="hljs-string">"SIGNED"</span>,
+            <span class="hljs-string">"REJECTED"</span>,
+            <span class="hljs-string">"CANCELLED"</span>,
+            <span class="hljs-string">"IN_PROGRESS"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Onboarding status"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">reason</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Fail reason. Required when status is not APPROVED"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">customerToken</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Customer unique token between HCVN and partner, generated by HCVN"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">availableLimit</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">amount</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Avaialable limit to customer"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">frameContractCode</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Contract code from the onboarding process."</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"responseTime"</span>,
+        <span class="hljs-string">"status"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"data"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">availableNextSteps</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"availableNextSteps"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"data"</span>,
+    <span class="hljs-string">"availableNextSteps"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><div class="description"><p>Error</p>
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json;charset=UTF-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-string">"ERR_1000_SOME_ERROR_CODE"</span></span>,
+      "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Some error/validation message description"</span></span>,
+      "<span class="hljs-attribute">severity</span>": <span class="hljs-value"><span class="hljs-string">"ERROR"</span></span>,
+      "<span class="hljs-attribute">attribute</span>": <span class="hljs-value"><span class="hljs-string">"personalBirthNumber"</span></span>,
+      "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value"><span class="hljs-string">"UAT1:AMS:20160516-091658.450:45e4"</span>
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">errors</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"unique internal error code"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"human readable error description (non-localized)"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">severity</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ERROR"</span>,
+              <span class="hljs-string">"WARN"</span>,
+              <span class="hljs-string">"INFO"</span>
+            ]
+          </span>}</span>,
+          "<span class="hljs-attribute">attribute</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"json path of request attribute that caused the error (if applicable)"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">ticketId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"internal ticket ID, used for error backtracking"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"code"</span>,
+          <span class="hljs-string">"message"</span>,
+          <span class="hljs-string">"severity"</span>
+        ]
+      </span>}
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"errors"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="hpl-onboarding-get-onboarding-status-put" class="action put"><h4 class="action-heading"><div class="name">Get Onboarding Status</div><a href="#hpl-onboarding-get-onboarding-status-put" class="method put">PUT</a><code class="uri">/lion-workflow/v2/workflow</code></h4><p>By using the workflow token, partner can trigger the next step which gets customer’s onboarding status <br/>
+</br>
+<strong>Note</strong>:</p>
+<ul>
+<li>
+<p>This request is limited to back-up use only. <strong>The rate limit is 5 requests/minute</strong>. We recommend our partners to receive Onboarding notification via webhooks.</p>
+</li>
+<li>
+<p>HPL onboarding journey on HCVN Web lasts up to 1 hour, so it’s best to check for the onboarding status once after this session.</p>
+</li>
+<li>
+<p>Customers who drops off before taking selfie or not identified will result in error.
+</br></p>
+</li>
+</ul>
+<p><strong>Onboarding status:</strong></p>
+<ul>
+<li>
+<p>NO_RESULT_FOUND: The customer is identified, but onboarding application is not submitted yet.</p>
+</li>
+<li>
+<p>IN_PROGRESS: Customer’s application is submitted and being processed</p>
+</li>
+<li>
+<p>SIGNED: Customer’s application is signed</p>
+</li>
+<li>
+<p>REJECTED: Customer’s application is rejected</p>
+</li>
+<li>
+<p>CANCELLED: Customer’s application is cancelled</p>
+</li>
+</ul>
+<p><br/><b>Request Description</b><br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>workflowToken</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Token that is used to trigger next workflow steps</td>
+  </tr>
+  <tr>
+    <td>step</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Declaring step</td>
+  </tr>
+</table>
+<p><br/><b>Response Description</b><br/></p>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>availableNextSteps</td>
+    <td>List</td>
+    <td>Yes</td>
+    <td>Available next steps within this workflow</td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>Object</td>
+    <td>Yes</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>data.responseTime</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Time when response is sent. Format: YYYY-MM-DDThh:mm:ssTZD</td>
+  </tr>
+  <tr>
+    <td>data.status</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Status of account opening process at BNPL site</td>
+  </tr>
+  <tr>
+    <td>data.reason</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Fail reason. Required when status is not APPROVED</td>
+  </tr>
+  <tr>
+    <td>data.customerToken</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer unique token between HCVN and partner, generated by HCVN</td>
+  </tr>
+  <tr>
+    <td>data.availableLimit</td>
+    <td>Object</td>
+    <td>No</td>
+    <td>Current available limit for BNPL account of the customer</td>
+  </tr>
+  <tr>
+    <td>data.availableLimit.amount</td>
+    <td>Number</td>
+    <td>Yes</td>
+    <td>Amount of the limit</td>
+  </tr>
+  <tr>
+    <td>data.availableLimit.currency</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Currency of the limit</td>
+  </tr>
+  <tr>
+    <td>data.frameContractCode</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Contract code that the customer onboards to</td>
+  </tr>
+</table>
+<br/>
+<p><strong>Receive notification from webhook:</strong></p>
+<ul>
+<li>
+<p>Payload can be adjusted based on partner’s requirements</p>
+</li>
+<li>
+<p>Possible Onboarding notification status:</p>
+<ul>
+<li>TOKEN_DEACTIVATED: Customer token has been deactivated</li>
+<li>SIGNED: Customer’s application is signed. Ready for transaction.</li>
+<li>REJECTED: Customer’s application is rejected</li>
+<li>CANCELLED: Customer’s application is cancelled</li>
+</ul>
+</li>
+<li>
+<p>Supported data:</p>
+</li>
+</ul>
+<table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>workflowToken</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Generated by HCVN in the Generate BNPL Redirect URL API.</td>
+  </tr>
+  <tr>
+    <td>phoneNumber</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer phone number that partner shares with HCVN in the Generate BNPL Redirect URL API</td>
+  </tr>
+  <tr>
+    <td>partnerCustomerId</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer ID that partner shares with HCVN in the Generate BNPL Redirect URL API</td>
+  </tr>
+  <tr>
+    <td>requestTime</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Time when the request is sent. Format: YYYY-MM-DDThh:mm:ssTZD</td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Onboarding status</td>
+  </tr>
+  <tr>
+    <td>customerToken</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Customer unique token between HCVN and partner, generated by HCVN. <b>Exclusively used for binding partners.</b></td>
+  </tr>
+  <tr>
+    <td>availableLimit</td>
+    <td>Object</td>
+    <td>No</td>
+    <td>Current available limit for BNPL account of the customer</td>
+  </tr>
+  <tr>
+    <td>availableLimit.amount</td>
+    <td>Number</td>
+    <td>Yes</td>
+    <td>Amount of the limit</td>
+  </tr>
+  <tr>
+    <td>availableLimit.currency</td>
+    <td>String</td>
+    <td>Yes</td>
+    <td>Currency of the limit</td>
+  </tr>
+  <tr>
+    <td>applicationCode</td>
+    <td>String</td>
+    <td>No</td>
+    <td>Contract code that the customer onboards to</td>
+  </tr>
+</table></div></div><hr class="split"><div class="middle"><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 17 Oct 2025</p></div></div></div></div><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>
